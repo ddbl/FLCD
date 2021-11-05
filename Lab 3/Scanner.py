@@ -67,4 +67,4 @@ class Scanner:
         return re.match(r'^[a-z]([a-zA-Z]|[0-9])*$', token) is not None
 
     def is_constant(self, token):
-        return re.match(r'^(0|-?[1-9][0-9]*)$|^\'.\'$|^\'.*\'$', token) is not None
+        return re.match(r'^(0|-?[1-9][0-9]*)$', token) is not None

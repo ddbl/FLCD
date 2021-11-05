@@ -2,7 +2,7 @@ from Scanner import *
 
 
 def main():
-    fileName = "p1.txt"
+    fileName = "p1err.txt"
     exceptionMessage = ""
     st = SymbolTable()
     pif = ProgramInternalForm()

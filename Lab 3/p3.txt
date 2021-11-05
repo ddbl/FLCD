@@ -6,5 +6,5 @@ while i < n:
 input number;
 sum = sum + number;
 i = i + 1;
-ouput sum;
+output sum;
 end!
