@@ -2,7 +2,7 @@ from Scanner import *
 
 
 def main():
-    fileName = "p1err.txt"
+    fileName = "p1.txt"
     exceptionMessage = ""
     st = SymbolTable()
     pif = ProgramInternalForm()
@@ -12,7 +12,7 @@ def main():
         lineCounter = 0
         for line in file:
             lineCounter += 1
-            tokens = re.findall(r"[A-Za-z0-9]+|\S", line)  #scanner.tokenize(line.strip())
+            tokens = scanner.tokenize(line)  #scanner.tokenize(line.strip())
             extra = ''
             for i in range(len(tokens)):
                 if tokens[i] in scanner.rwords + scanner.separators + scanner.operators:

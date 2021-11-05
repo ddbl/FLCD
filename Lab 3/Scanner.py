@@ -25,37 +25,39 @@ class Scanner:
         return token, index
 
     def tokenize(self, line):
-        token = ''
-        index = 0
-        tokens = []
-        while index < len(line):
-            if self.is_part_of_operator(line[index]):
-                if token:
-                    tokens.append(token)
-                token, index = self.get_string_token(line, index)
-                tokens.append(token)
-                token = ''  # reset token
-
-            elif line[index] == '\'':
-                if token:
-                    tokens.append(token)
-                token, index = self.getStringToken(line, index)
-                tokens.append(token)
-                token = ''  # reset token
-
-            elif line[index] in self.separators:
-                if token:
-                    tokens.append(token)
-                token, index = line[index], index + 1
-                tokens.append(token)
-                token = ''  # reset token
-
-            else:
-                token += line[index]
-                index += 1
-        if token:
-            tokens.append(token)
+        tokens = re.findall(r"[A-Za-z0-9]+|\S", line)
         return tokens
+        # token = ''
+        # index = 0
+        # tokens = []
+        # while index < len(line):
+        #     if self.is_part_of_operator(line[index]):
+        #         if token:
+        #             tokens.append(token)
+        #         token, index = self.get_string_token(line, index)
+        #         tokens.append(token)
+        #         token = ''  # reset token
+        #
+        #     elif line[index] == '\'':
+        #         if token:
+        #             tokens.append(token)
+        #         token, index = self.getStringToken(line, index)
+        #         tokens.append(token)
+        #         token = ''  # reset token
+        #
+        #     elif line[index] in self.separators:
+        #         if token:
+        #             tokens.append(token)
+        #         token, index = line[index], index + 1
+        #         tokens.append(token)
+        #         token = ''  # reset token
+        #
+        #     else:
+        #         token += line[index]
+        #         index += 1
+        # if token:
+        #     tokens.append(token)
+
 
     def is_part_of_operator(self, char):
         for op in self.operators:
