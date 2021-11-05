@@ -1,0 +1,14 @@
+start!
+int a, int i;
+bool prime;
+prime = false
+i = 2;
+while i*i < a:
+if a == 2:
+prime = true;
+i = a;
+if a % i == 0:
+prime = false;
+i = a;
+i = i + 1;
+end!

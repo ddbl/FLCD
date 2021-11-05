@@ -1,0 +1,10 @@
+start!
+int n, int i, number, sum;
+sum = 0;
+input n;
+while i < n:
+input number;
+sum = sum + number;
+i = i + 1;
+ouput sum;
+end!
